@@ -4,6 +4,7 @@ import { connectDB } from "./db.js";
 import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
+import taskRoutes from "./routes/task.routes.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cookieParser());
 connectDB()
 
 app.use("/api", authRoutes);
+app.use("/api", taskRoutes);
 
 app.listen(4000)
 console.log("Server is running on port 4000");
